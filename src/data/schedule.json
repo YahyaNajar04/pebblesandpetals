@@ -1,0 +1,8 @@
+[
+  { "time": "9:30", "emoji": "🚪", "label": "Arrival & Circle Time" },
+  { "time": "10:30", "emoji": "📖", "label": "Activity Learning" },
+  { "time": "11:00", "emoji": "🍎", "label": "Snack Time" },
+  { "time": "11:30", "emoji": "🎨", "label": "Creative & Sensory Play" },
+  { "time": "1:00", "emoji": "🍽️", "label": "Lunch" },
+  { "time": "2:00", "emoji": "👋", "label": "Departure" }
+]

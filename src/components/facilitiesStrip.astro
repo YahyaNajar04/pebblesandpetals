@@ -1,0 +1,17 @@
+---
+import facilities from "../data/facilities.json";
+---
+<section class = "px-4 py-16">
+      <div class = "mx-auto flex max-w-5xl flex-wrap justify-center gap-10">
+            {facilities.map((f) => (
+                  <div class = "flex w-32 flex-col items-center gap-3 text-center">
+                        <div class = "flex w-32 flex-col items-center gap-3 text-center">
+                              <div class = {`flex h-24 w-24 items-center justify-center rounded-full border-3 border-ink text-4xl ${f.bg}`}>
+                                    {f.emoji}
+                              </div>
+                              <span class = "font-display">{f.label}</span>
+                        </div>
+                  </div>
+            ))}
+      </div>
+</section>

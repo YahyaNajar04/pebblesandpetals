@@ -1,0 +1,20 @@
+---
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+const { title = "Pebbles and Petals Pre-School" } = Astro.props;
+import "../styles/global.css";
+---
+<html lang="en">
+      <head>
+            <meta charset="utf-8" />
+            <meta name = "viewport" content = "width = device-width, initial-scale=1"/>
+            <title>{title}</title>
+            <link rel="preconnect" href = "https://fonts.googleapis.com" />
+            <link href = "https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel = "stylesheet" />
+      </head>
+      <body>
+            <Header />
+            <slot /> <!-- Astro's version of {children} -->
+            <Footer/>
+      </body>
+</html>

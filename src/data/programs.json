@@ -1,0 +1,6 @@
+[
+  { "emoji": "🧸", "name": "Playgroup / Daycare", "fee": 2000, "blurb": "Sensory play, music & movement to ease in.", "shadow": "var(--color-sky)" },
+  { "emoji": "🎨", "name": "Nursery", "fee": 2100, "blurb": "Language, numeracy, creativity & social skills.", "shadow": "var(--color-coral)" },
+  { "emoji": "✏️", "name": "LKG", "fee": 2200, "blurb": "Early literacy, numeracy & communication.", "shadow": "var(--color-sunny)" },
+  { "emoji": "🎓", "name": "UKG", "fee": 2300, "blurb": "Independent learning & school-readiness.", "shadow": "var(--color-grass)" }
+]

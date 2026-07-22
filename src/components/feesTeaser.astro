@@ -1,0 +1,21 @@
+---
+import Button from "./button.astro";
+import fees from "../data/fees.json";
+---
+<section class = "px-4 py-16 text-center">
+      <h2 class = "font-display text-4xl font-bold text-coral md:text-5xl">Fees</h2>
+      <div class = "mt-8 flex justify-center gap-16">
+            <div>
+                  <p class = "font-display text-4xl text-grass">₹{fees.admission.toLocaleString("en-IN")}</p>
+                  <p class = "mt-1">Admission (one-time)</p>
+            </div>
+            <div>
+                  <p class = "font-display text-4xl text-grass">₹{fees.tuitionFrom.toLocaleString("en-IN")}</p>
+                  <p class = "mt-1">Tuition from</p>
+            </div>
+            <p class = "mt-6">{fees.discountsLine}</p>
+            <div class = "mt-8">
+                  <Button href = "/fees">See Full Fee Structure →</Button>
+            </div>
+      </div>
+</section>

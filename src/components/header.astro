@@ -1,0 +1,31 @@
+---
+const links = [
+	{ href: "/", label: "Home"},
+	{ href: "/about", label: "About"},
+	{ href: "/programs", label: "Programs"},
+	{ href: "/facilities", label: "Facilties"},
+	{ href: "/fees", label: "Fees"},
+	{ href: "/contact", label: "Contact Us"}
+]
+const current = Astro.url.pathname;
+---
+<header class = "sticky top-0 z-50 border-b-4 border-sunny bg-white">
+	<div class = "mx-auto flex items-center justify-between px-4 py-3">
+		<a href = "/" class = "flex items-center gap-2">
+		<img src = "/logo.jpeg" alt= "Pebbles & Petals Logo" class = "h-20 w-20"/>
+		<span class = "font-display text-2xl text-coral">Pebbles and Petals</span>
+		</a>
+
+		<nav class = "hidden gap-6 font-display text-lg md:flex">
+			{links.map((l) => (
+				<a href = {l.href} class = {current === l.href ? "text-coral": "hover:text-sky"}>
+					{l.label}
+				</a>
+			))}
+		</nav>
+
+		<a href = "https://wa.me/919906944484" class = "rounded-2xl border-3 border-ink bg-grass px-5 py-2 font-display text-white shadow-[3px_3px_0_var(--color-ink)]">
+		Whatsapp
+		</a>
+	</div>
+</header>

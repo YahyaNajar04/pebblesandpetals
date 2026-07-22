@@ -1,0 +1,23 @@
+---
+import Card from "./card.astro";
+import programs from "../data/programs.json"
+---
+<section class = "bg-sunny/15 px-4 py-16">
+      <div class = "mx-auto max-w-6xl">
+            <h2 class = "text-center font-display text-4xl font-bold text-coral md:text-5xl">
+                  Our Programs
+            </h2>
+            <div class = "mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                  {programs.map((p) => (
+                        <Card shadow = {p.shadow}>
+                              <div class = "text-4xl">{p.emoji}</div>
+                              <h3 class = "mt-3 font-display text-xl">{p.name}</h3>
+                              <p class = "mt-1 font-display text-3xl text-grass">
+                                    ₹{p.fee.toLocaleString("en-IN")}<span class = "text-base text-ink/50">/mo</span>
+                              </p>
+                              <p class = "mt-2 text-sm">{p.blurb}</p>
+                        </Card>
+                  ))}
+            </div>
+      </div>
+</section>

@@ -1,0 +1,7 @@
+[
+  { "emoji": "🏊", "label": "Swimming Pool", "bg": "bg-sky" },
+  { "emoji": "🏎️", "label": "Go-Karting", "bg": "bg-coral" },
+  { "emoji": "🌈", "label": "Sensory Play", "bg": "bg-grass" },
+  { "emoji": "🧩", "label": "Montessori Tools", "bg": "bg-sunny" },
+  { "emoji": "🎥", "label": "CCTV Secured", "bg": "bg-coral/60" }
+]

@@ -1,0 +1,25 @@
+---
+import Button from "./button.astro";
+---
+<section class = "relative overflow-hidden bg-sky px-4 py-20 text-center text-white">
+      <!-- Floating Shapes -->
+      <div class = "absolute left-[8%] top-[12%] h-16 w-16 rounded-full bg-sunny"></div>
+      <div class = "absolute left-[20%] top-[30%] h-10 w-10 rounded-full bg-coral"></div>
+      <div class = "absolute left-[18%] bottom-[15%] h-0 w-0 border-x-[22px] border-b-[38px] border-x-transparent border-b-grass"></div>
+      <div class = "absolute right-[20%] top-[20%] h-16 w-16 rounded-full bg-sunny"></div>
+      <div class = "absolute right-[20%] bottom-[20%] h-16 w-16 rounded-full">🎈</div>
+      
+      <div class = "relative mx-auto max-w-3xl">
+            <h1 class = "font-display text-5xl font-bold md:text-7xl [text-shadow:3px_3px_0_rgba(0,0,0,0.15)]">
+                  Pebbles and Petals Pre-School
+            </h1>
+            <p class = "mt-4 font-display text-3xl text-sunny">"Learn, Play, Bloom"</p>
+            <p class = "mx-auto mt-6 max-w-wl text-lg">
+                  A bright, joy-filled preschool near Heritage Bagh, Kishtwar - where every day is an adventure!
+            </p>
+            <div class = "mt-10 flex flex-wrap justify-center gap-4">
+                  <Button href="https://wa.me/919906944484" color = "bg-grass" class = "texxt-white shadow-[3px_3px_0_var(--color-ink)]">Enquire on WhatsApp</Button>
+                  <Button href="tel:+919906944484" class = "text-black shadow-[3px_3px_0_var(--color-ink)]">📞 Call Us</Button>
+            </div>
+      </div>
+</section>
