@@ -4,6 +4,8 @@ import Card from "../components/card.astro";
 import Button from "../components/button.astro";
 import fees from "../data/fees.json";
 import programs from "../data/programs.json";
+import { WHATSAPP, TEL, site } from "../lib/site";
+
 
 const inr = (n: number) => "₹" + n.toLocaleString("en-IN");
 const annualTotal = fees.annualCharges.reduce((sum, c) => sum + c.amount, 0);
@@ -82,7 +84,7 @@ const annualTotal = fees.annualCharges.reduce((sum, c) => sum + c.amount, 0);
             </div>
 
             <div class = "mt-12 text-center">
-                  <Button href = "https://wa.me/919906944484" color="bg-grass" class="text-white">Ask About Admission</Button>
+                  <Button href = {WHATSAPP} color="bg-grass" class="text-white">Ask About Admission</Button>
             </div>
       </main>
 </Base>

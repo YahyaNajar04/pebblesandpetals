@@ -1,14 +1,17 @@
+---
+import { WHATSAPP, TEL, site } from "../lib/site";
+---
 <footer class = "mt-16 bg-ink px-4 py-10 text-cream">
       <div class = "mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
             <div>
                   <h3 class = "font-display text-xl text-sunny">Pebbles and Petals Pre-School</h3>
-                  <p class = "mt-2">Near Heritage Bagh, Kishtwar, Jammu & Kashmir</p>
-                  <p>Mon-Sat · 9:30 AM - 2:00 PM</p>
+                  <p class = "mt-2">{site.address}</p>
+                  <p>{site.hours}</p>
             </div>
             <div>
                   <h3 class = "font-display text-xl text-coral">Get in Touch</h3>
-                  <p class = "mt-2"><a href = "https://wa.me/919906944484" class = "text-grass">Chat on Whatsapp</a></p>
-                  <p><a href = "tel:+919906944484" class = "text-sky"> +91 99069 44484</a></p>
+                  <p class = "mt-2"><a href = {WHATSAPP} class = "text-grass">Chat on Whatsapp</a></p>
+                  <p><a href = {TEL} class = "text-sky"> {site.phone}</a></p>
             </div>
             <div class = "rounded-xl border-2 border-dashed border-cream/50 p-4 text-sm text-cream/70">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d486.23270341196303!2d75.7653453405486!3d33.314704051603066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1784710327136!5m2!1sen!2sin" width="330" height="200" style="border:2;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>

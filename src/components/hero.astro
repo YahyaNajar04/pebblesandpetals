@@ -1,5 +1,6 @@
 ---
 import Button from "./button.astro";
+import { WHATSAPP, TEL, site } from "../lib/site";
 ---
 <section class = "relative overflow-hidden bg-sky px-4 py-20 text-center text-white">
       <!-- Floating Shapes -->
@@ -18,8 +19,8 @@ import Button from "./button.astro";
                   A bright, joy-filled preschool near Heritage Bagh, Kishtwar - where every day is an adventure!
             </p>
             <div class = "mt-10 flex flex-wrap justify-center gap-4">
-                  <Button href="https://wa.me/919906944484" color = "bg-grass" class = "texxt-white shadow-[3px_3px_0_var(--color-ink)]">Enquire on WhatsApp</Button>
-                  <Button href="tel:+919906944484" class = "text-black shadow-[3px_3px_0_var(--color-ink)]">📞 Call Us</Button>
+                  <Button href={WHATSAPP} color = "bg-grass" class = "texxt-white shadow-[3px_3px_0_var(--color-ink)]">Enquire on WhatsApp</Button>
+                  <Button href={TEL}class = "text-black shadow-[3px_3px_0_var(--color-ink)]">📞 Call Us</Button>
             </div>
       </div>
 </section>
