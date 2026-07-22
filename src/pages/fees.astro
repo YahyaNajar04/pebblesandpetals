@@ -1,0 +1,88 @@
+---
+import Base from "../layouts/Base.astro";
+import Card from "../components/card.astro";
+import Button from "../components/button.astro";
+import fees from "../data/fees.json";
+import programs from "../data/programs.json";
+
+const inr = (n: number) => "₹" + n.toLocaleString("en-IN");
+const annualTotal = fees.annualCharges.reduce((sum, c) => sum + c.amount, 0);
+---
+<Base title = "Fees | Pebbles and Petals Pre-School">
+      <main class = "mx-auto max-w-5xl px-4 py-12">
+            <h1 class = "text-center font-display text-5xl px-4 py-12">
+                  Fee Structure
+            </h1>
+            <div class = "mt-10 grid gap-8 md:grid-cols-2">
+                  <!-- Admission -->
+                  <Card shadow = "var(--color-sunny)" class = "text-left">
+                        <h2 class = "font-display text-2xl text-sky">Admission Fee (One-Time)</h2>
+                        <p class = "mt-2 font-display text-4xl text-grass">{inr(fees.admission)}</p>
+                        <p class = "mt-2 text-sm">{fees.admissionNote}</p>
+                  </Card>
+
+                  <!-- Annual charges -->
+                  <Card shadow = "var(--color-sky)" class = "text-left">
+                        <h2 class = "font-display text-2xl text-sky">Annual Charges</h2>
+                        <table class = "mt-3 w-full text-sm">
+                              {fees.annualCharges.map((c) => (
+                                    <tr class = "border-b border-ink/10">
+                                          <td class = "py-2">{c.item}</td>
+                                          <td class = "py-2 text-right font-display">{inr(c.amount)}</td>
+                                    </tr>
+                              ))}
+                              <tr>
+                                    <td class = "py-2 font-bold">Total</td>
+                                    <td class = "py-2 text-right font-display font-bold text-grass">{inr(annualTotal)}</td>
+                              </tr>
+                        </table>
+                  </Card>
+
+                  <!-- Monthly Tuition -->
+                   <Card shadow = "var(--color-coral" class = "text-left">
+                        <h2 class = "font-display text-2xl text-sky">Monthly Tuition</h2>
+                        <table class="mt-3 w-full text-sm">
+                              {programs.map((p) => (
+                                    <tr class = "border-b border-ink/10">
+                                          <td class = "py-2">{p.name}</td>
+                                          <td class = "py-2 text-right font-display">{inr(p.fee)}</td>                                      
+                                    </tr>
+                              ))}
+                        </table>
+                   </Card>
+                   
+                   <!-- Transport -->
+                    <Card shadow = "var(--color-grass)" class = "text-left">
+                        <h2 class = "font display text-2xl text-sky">Transport (Per Month)</h2>
+                        <table class = "mt-3 w-full text-sm">
+                              {fees.transport.map((t) => (
+                                    <tr class="border-b border-ink/10">
+                                          <td class = "py-2">{t.range}</td>
+                                          <td class = "py-2 text-right font-display">{inr(t.amount)}</td>
+                                    </tr>
+                              ))}
+                        </table>
+                    </Card>
+
+                    <!-- Add-ons -->
+                     <Card shadow = "var(--color-sunny)" class = "text-left">
+                        <h2 class = "font-display text-2xl text-sky">Optional Add-Ons</h2>
+                        {fees.addons.map((a) => (
+                              <p class = "mt-3 text-sm"><strong class = "font-display">{a.name}</strong> - {a.detail} · <span class = "text-grass font-display">{a.price}</span></p>
+                        ))}
+                     </Card>
+
+                     <!-- Discounts -->
+                      <Card shadow="var(--color-coral)" class = "text-left">
+                        <h2 class = "font-display text-2xl text-sky">Discounts and Offers</h2>
+                        {fees.discounts.map((d) => (
+                              <p class = "mt-3 text-sm">🎉 <strong class = "font-display">{d.name}</strong> - {d.detail}</p>
+                        ))}
+                      </Card>
+            </div>
+
+            <div class = "mt-12 text-center">
+                  <Button href = "https://wa.me/919906944484" color="bg-grass" class="text-white">Ask About Admission</Button>
+            </div>
+      </main>
+</Base>

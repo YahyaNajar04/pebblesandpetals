@@ -1,5 +1,27 @@
 {
-      "admission": 12000,
-      "tuitionFrom": 2000,
-      "discountsLine": "Sibling & early-bird discounts available."
+  "admission": 12000,
+  "admissionNote": "Covers registration, stationery kit, welcome kit (bag, bottle, etc.) and first year's annual charges.",
+  "tuitionFrom": 2000,
+  "discountsLine": "Sibling & early-bird discounts available.",
+  "annualCharges": [
+    { "item": "Infrastructure & Maintenance", "amount": 3500 },
+    { "item": "Festival & Event Celebrations", "amount": 2000 },
+    { "item": "Learning Activities", "amount": 1000 },
+    { "item": "Medical & Safety Supplies", "amount": 500 }
+  ],
+  "tuitionNote": "Tuition fee is subject to an annual revision of 5%, effective at the beginning of each academic year.",
+  "transport": [
+    { "range": "Up to 2 km", "amount": 500 },
+    { "range": "2 – 5 km", "amount": 800 },
+    { "range": "5 – 10 km", "amount": 1200 }
+  ],
+  "addons": [
+    { "name": "Meal Plan", "detail": "Healthy snacks & drinks", "price": "₹500/month" },
+    { "name": "Activity Club", "detail": "Dance, storytelling, craft workshops — 3 terms/year", "price": "₹1,200 per term" }
+  ],
+  "discounts": [
+    { "name": "Sibling Discount", "detail": "10% on tuition for the second child" },
+    { "name": "Referral Discount", "detail": "₹500 off on next month's fee" },
+    { "name": "Early Bird Admission", "detail": "Waive ₹1,000 from the admission fee" }
+  ]
 }
