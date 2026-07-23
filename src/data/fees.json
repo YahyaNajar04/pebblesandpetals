@@ -22,6 +22,6 @@
   "discounts": [
     { "name": "Sibling Discount", "detail": "10% on tuition for the second child" },
     { "name": "Referral Discount", "detail": "₹500 off on next month's fee" },
-    { "name": "Early Bird Admission", "detail": "Waive ₹1,000 from the admission fee" }
+    { "name": "Early Bird Admission", "detail": "Waive ₹1,000 from the admission fee for first 5 students every financial year" }
   ]
 }

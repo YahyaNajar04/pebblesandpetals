@@ -1,7 +1,7 @@
 ---
 import all from "../data/gallery.json";
 
-const { title = "Life at Pebbles & Petals", ids, tag, limit } = Astro.props;
+const { title = "Gallery", ids, tag, limit } = Astro.props;
 
 let images = all;
 if (ids)  images = images.filter((img) => ids.includes(img.id));
