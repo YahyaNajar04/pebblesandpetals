@@ -1,0 +1,58 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHeader from "../components/pageHeader.astro";
+import OurStory from "../components/ourStory.astro";
+import Card from "../components/card.astro";
+import about from "../data/about.json";
+import Team from "../components/team.astro";
+---
+<Base title="About | Pebbles and Petals Pre-School">
+  <PageHeader title="About Us" subtitle="Nurturing little minds, growing bright futures" bg="bg-coral" />
+
+  <!-- Our Story (reused from home) -->
+  <OurStory />
+
+  <!-- Mission + Philosophy -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <div class="grid gap-8 md:grid-cols-2">
+      <Card shadow="var(--color-sunny)" class="text-left">
+        <h2 class="font-display text-2xl text-sky">Our Mission</h2>
+        <ul class="mt-3 space-y-2 text-sm">
+          {about.mission.map((m) => <li>🌸 {m}</li>)}
+        </ul>
+      </Card>
+      <Card shadow="var(--color-grass)" class="text-left">
+        <h2 class="font-display text-2xl text-sky">Our Philosophy</h2>
+        <p class="mt-3 text-sm leading-relaxed">{about.philosophy}</p>
+      </Card>
+    </div>
+  </section>
+
+  <!-- Our Team -->
+  <Team />
+
+  <!-- Why Choose Us -->
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <h2 class="text-center font-display text-4xl font-bold text-coral">Why Choose Pebbles & Petals?</h2>
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {about.whyChoose.map((w, i) => (
+        <div class="rounded-2xl border-3 border-ink bg-white p-4 text-center text-sm" style={`box-shadow: 4px 4px 0 var(--color-sky)`}>
+          ⭐ {w}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Learning Beyond the Classroom -->
+  <section class="bg-sunny/15 px-4 py-12">
+    <div class="mx-auto max-w-4xl text-center">
+      <h2 class="font-display text-4xl font-bold text-coral">Learning Beyond the Classroom</h2>
+      <p class="mt-2">Because learning doesn't stop at books.</p>
+      <div class="mt-6 flex flex-wrap justify-center gap-3">
+        {about.beyondClassroom.map((b) => (
+          <span class="rounded-full border-3 border-ink bg-white px-4 py-2 font-display text-sm">{b}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

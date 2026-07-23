@@ -1,0 +1,19 @@
+---
+import all from "../data/gallery.json";
+
+const { title = "Life at Pebbles & Petals", ids, tag, limit } = Astro.props;
+
+let images = all;
+if (ids)  images = images.filter((img) => ids.includes(img.id));
+if (tag)  images = images.filter((img) => img.tags?.includes(tag));
+if (limit) images = images.slice(0, limit);
+---
+<section class="mx-auto max-w-6xl px-4 py-16">
+  <h2 class="text-center font-display text-4xl font-bold text-coral md:text-5xl">{title}</h2>
+  <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {images.map((img) => (
+      <img src={`/${img.src}`} alt={img.alt} loading="lazy"
+        class="h-64 w-full rounded-2xl border-3 border-ink object-cover shadow-[4px_4px_0_var(--color-sky)]" />
+    ))}
+  </div>
+</section>

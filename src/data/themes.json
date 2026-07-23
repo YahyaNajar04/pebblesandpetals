@@ -1,0 +1,8 @@
+[
+  { "day": "Mon", "theme": "Colors & Shapes", "activity": "Shape Sorting Game", "art": "Paint with Primary Colors" },
+  { "day": "Tue", "theme": "Animals", "activity": "Animal Sound Guessing Game", "art": "Make Animal Masks" },
+  { "day": "Wed", "theme": "Nature & Seasons", "activity": "Nature Walk / Leaf Collection", "art": "Nature Collage" },
+  { "day": "Thurs", "theme": "Numbers & Counting", "activity": "Counting with Toys", "art": "Number Song & Dance" },
+  { "day": "Fri", "theme": "Feelings & Friends", "activity": "Emotion Cards / Role Play", "art": "Friendship Bracelet Craft" },
+  { "day": "Sat", "theme": "Current Affairs", "activity": "Know Your Surroundings", "art": "Maps & Globe" }
+]

@@ -1,0 +1,4 @@
+[
+  { "id": "home1", "src": "Home_Image1.jpeg", "alt": "Children at play", "tags": ["home", "outdoor"] },
+  { "id": "home2", "src": "Home_Image2.jpeg", "alt": "Learning time", "tags": ["home", "classroom"] }
+]

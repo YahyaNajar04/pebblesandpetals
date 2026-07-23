@@ -1,0 +1,34 @@
+{
+  "intro": "Welcome to Pebbles and Petals Pre-School, a vibrant and nurturing early learning center dedicated to giving young children a joyful, enriching foundation for lifelong learning.",
+  "storyTagline": "Where Little Dreams Begin and Bright Futures Bloom",
+  "storyText": "Established in 2025 near Heritage Bagh, Kishtwar, Pebbles and Petals is a vibrant, nurturing early learning center built to inspire curiosity, creativity, confidence and a lifelong love of exploration in every child.",
+  "storyPoints": [
+    { "emoji": "🎯", "text": "Safe, caring & inclusive learning" },
+    { "emoji": "🎨", "text": "Play-based curiosity & creativity" },
+    { "emoji": "🤝", "text": "Strong parent partnerships" },
+    { "emoji": "🌱", "text": "Kindness, respect & independence" }
+  ],
+  "mission": [
+    "Provide a safe, caring, and inclusive learning environment.",
+    "Foster creativity, curiosity, and critical thinking through play-based learning.",
+    "Encourage social, emotional, physical, and cognitive development.",
+    "Build strong partnerships with parents in supporting each child's growth.",
+    "Instill values of kindness, respect, responsibility, and independence."
+  ],
+  "philosophy": "We believe children learn best through play, exploration, and hands-on experiences. Our curriculum blends meaningful activities with fun — developing life skills, communication, problem-solving, and emotional intelligence while children enjoy every step of the journey.",
+  "whyChoose": [
+    "Child-centered learning approach",
+    "Qualified and caring educators",
+    "Safe and stimulating environment",
+    "Focus on holistic development",
+    "Age-appropriate curriculum",
+    "Strong parent-school partnership",
+    "Fun-filled learning experiences",
+    "Emphasis on values and character building"
+  ],
+  "beyondClassroom": [
+    "Art & Craft Activities", "Storytelling Sessions", "Nature Walks",
+    "Science Exploration", "Dramatic Play", "Festivals & Special Days",
+    "Talent Shows & Cultural Events"
+  ]
+}

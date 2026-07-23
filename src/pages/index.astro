@@ -6,12 +6,15 @@ import Programs from "../components/programs.astro";
 import FacilitiesStrip from "../components/facilitiesStrip.astro";
 import DayTimeLine from "../components/dayTimeLine.astro";
 import PhotoSpot from "../components/photoSpot.astro";
+import OurStory from "../components/ourStory.astro";
+import Gallery from "../components/gallery.astro";
 ---
 <Base title = "Home | Pebbles and Petals">
 	<Hero />
+	<OurStory />
 	<WhyUs />
 	<Programs />
 	<FacilitiesStrip />
 	<DayTimeLine />
-	<PhotoSpot label = "Kids racing on the go-tracking track" />
+	<Gallery ids={["home1", "home2"]}/>
 </Base>

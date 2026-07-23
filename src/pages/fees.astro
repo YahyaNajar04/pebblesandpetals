@@ -5,16 +5,15 @@ import Button from "../components/button.astro";
 import fees from "../data/fees.json";
 import programs from "../data/programs.json";
 import { WHATSAPP, TEL, site } from "../lib/site";
+import PageHeader from "../components/pageHeader.astro";
 
 
 const inr = (n: number) => "₹" + n.toLocaleString("en-IN");
 const annualTotal = fees.annualCharges.reduce((sum, c) => sum + c.amount, 0);
 ---
 <Base title = "Fees | Pebbles and Petals Pre-School">
-      <main class = "mx-auto max-w-5xl px-4 py-12">
-            <h1 class = "text-center font-display text-5xl px-4 py-12">
-                  Fee Structure
-            </h1>
+      <PageHeader title="Fee Structure" />
+      <main class = "mx-auto px-4 py-12">
             <div class = "mt-10 grid gap-8 md:grid-cols-2">
                   <!-- Admission -->
                   <Card shadow = "var(--color-sunny)" class = "text-left">

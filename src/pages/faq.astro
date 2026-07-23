@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import Button from "../components/button.astro";
 import { waLink } from "../lib/site";
 import faqs from "../data/faq.json";
+import PageHeader from "../components/pageHeader.astro";
 
 const shadows = [
   "var(--color-sunny)", "var(--color-sky)", "var(--color-coral)",
@@ -10,14 +11,7 @@ const shadows = [
 ];
 ---
 <Base title="FAQ | Pebbles and Petals Pre-School">
-  <!-- Hero band -->
-  <section class="bg-sky px-4 py-20 text-center text-white">
-    <h1 class="font-display text-5xl font-bold md:text-6xl [text-shadow:3px_3px_0_rgba(0,0,0,0.15)]">
-      Frequently Asked Questions
-    </h1>
-    <p class="mt-3 text-lg">Everything parents ask us before joining Pebbles &amp; Petals</p>
-  </section>
-
+  <PageHeader title="Frequently Asked Questions" subtitle="Everything parents ask us before joining Pebbles & Petals" />
   <main class="mx-auto max-w-3xl px-4 py-14">
     <div class="space-y-5">
       {faqs.map((f, i) => (

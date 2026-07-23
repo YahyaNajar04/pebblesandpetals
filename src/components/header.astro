@@ -1,36 +1,64 @@
 ---
-import { WHATSAPP, TEL, site } from "../lib/site";
+import { WHATSAPP } from "../lib/site";
 const links = [
-	{ href: "/", label: "Home"},
-	{ href: "/about", label: "About"},
-	{ href: "/programs", label: "Programs"},
-	{ href: "/facilities", label: "Facilties"},
-	{ href: "/fees", label: "Fees"},
-	{ href: "/faq", label: "FAQ"},
-	{ href: "/contact", label: "Contact Us"}
-]
+	{ href: "/", label: "Home" },
+	{ href: "/about", label: "About" },
+	{ href: "/programs", label: "Programs" },
+	{ href: "/facilities", label: "Facilities" },
+	{ href: "/fees", label: "Fees" },
+	{ href: "/faq", label: "FAQ" },
+	{ href: "/contact", label: "Contact Us" }
+];
 const current = Astro.url.pathname;
 ---
-<header class = "sticky top-0 z-50 border-b-4 border-sunny bg-white">
-	<div class = "mx-auto flex items-center justify-between px-4 py-3">
-		<a href = "/" class = "flex items-center gap-2">
-		<img src = "/icon.jpeg" alt= "Pebbles & Petals Logo" class = "h-20 w-20"/>
-		<div class = "flex flex-col leading-tight">
-		<span class = "font-display text-2xl text-coral">Pebbles and Petals</span>
-		<span class = "font-display text-xl text-coral">Pre-School</span>
-		</div>
+<header class="sticky top-0 z-50 border-b-4 border-sunny bg-white">
+	<div class="mx-auto flex items-center justify-between px-4 py-3">
+		<a href="/" class="flex items-center gap-2">
+			<img src="/icon.jpeg" alt="Pebbles & Petals Logo" class="h-20 w-20" />
+			<div class="flex flex-col leading-tight">
+				<span class="font-display text-2xl text-coral">Pebbles and Petals</span>
+				<span class="font-display text-xl text-coral">Pre-School</span>
+			</div>
 		</a>
 
-		<nav class = "hidden gap-6 font-display text-lg md:flex">
+		<!-- Desktop nav -->
+		<nav class="hidden gap-6 font-display text-lg md:flex">
 			{links.map((l) => (
-				<a href = {l.href} class = {current === l.href ? "text-coral": "hover:text-sky"}>
+				<a href={l.href} class={current === l.href ? "text-coral" : "hover:text-sky"}>
 					{l.label}
 				</a>
 			))}
 		</nav>
 
-		<a href = {WHATSAPP} class = "rounded-2xl border-3 border-ink bg-grass px-5 py-2 font-display text-white shadow-[3px_3px_0_var(--color-ink)]">
-		Whatsapp
+		<!-- Desktop WhatsApp -->
+		<a href={WHATSAPP} class="hidden rounded-2xl border-3 border-ink bg-grass px-5 py-2 font-display text-white shadow-[3px_3px_0_var(--color-ink)] md:block">
+			Whatsapp
 		</a>
+
+		<!-- Hamburger (mobile) -->
+		<button id="menu-btn" aria-label="Open menu" class="text-3xl md:hidden">☰</button>
 	</div>
+
+	<!-- Mobile menu panel -->
+	<nav id="mobile-menu" class="hidden flex-col gap-1 border-t-3 border-sunny bg-white px-4 py-4 font-display text-lg md:hidden">
+		{links.map((l) => (
+			<a href={l.href} class={`rounded-xl px-3 py-2 ${current === l.href ? "bg-coral/10 text-coral" : "hover:bg-sky/10"}`}>
+				{l.label}
+			</a>
+		))}
+		<a href={WHATSAPP} class="mt-2 rounded-xl bg-grass px-3 py-2 text-center text-white">Whatsapp</a>
+	</nav>
 </header>
+
+<script>
+	const btn = document.getElementById("menu-btn");
+	const menu = document.getElementById("mobile-menu");
+	if (btn && menu) {
+		btn.addEventListener("click", () => {
+			const open = menu.classList.toggle("flex");
+			menu.classList.toggle("hidden");
+			btn.textContent = open ? "✕" : "☰";
+			btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+		});
+	}
+</script>
