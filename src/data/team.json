@@ -1,6 +1,13 @@
 [
-  { "name": "Full Name", "role": "Principal / Director", "photo": "", "bio": "Short one-line bio — qualifications or years of experience." },
-  { "name": "Full Name", "role": "Head Teacher", "photo": "", "bio": "Short one-line bio." },
-  { "name": "Full Name", "role": "Nursery Teacher", "photo": "", "bio": "Short one-line bio." },
-  { "name": "Full Name", "role": "Child Counsellor", "photo": "", "bio": "On-call child psychologist." }
+  { "name": "Mrs. Zahida Kousar", "role": "Chairperson", "photo": "", "bio": "" },
+  { "name": "Gazi Hassan Butt", "role": "Director", "photo": "", "bio": "" },
+  { "name": "Mr. Mohd Erfan Mattoo", "role": "Academic Advisor", "photo": "", "bio": "" },
+  { "name": "Mrs. Shahnaz Banoo", "role": "Professional Development & Curriculum Advisor", "photo": "", "bio": "" },
+  { "name": "Dr. Sanna Jaan", "role": "Counsellor on Call", "photo": "", "bio": "" },
+  { "name": "Saniya Fatima", "role": "Activity, Art & Craft Teacher", "photo": "", "bio": "" },
+  { "name": "Attiya Fatimah", "role": "Phonics Teacher", "photo": "", "bio": "" },
+  { "name": "", "role": "Legal Advisor", "photo": "", "bio": "" },
+  { "name": "", "role": "Admission Coordinator", "photo": "", "bio": "" },
+  { "name": "", "role": "Front Desk Executive", "photo": "", "bio": "" },
+  { "name": "", "role": "Childcare Assistant", "photo": "", "bio": "" }
 ]
