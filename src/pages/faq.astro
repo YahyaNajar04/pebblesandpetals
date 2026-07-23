@@ -1,0 +1,44 @@
+---
+import Base from "../layouts/Base.astro";
+import Button from "../components/button.astro";
+import { waLink } from "../lib/site";
+import faqs from "../data/faq.json";
+
+const shadows = [
+  "var(--color-sunny)", "var(--color-sky)", "var(--color-coral)",
+  "var(--color-grass)", "var(--color-coral)",
+];
+---
+<Base title="FAQ | Pebbles and Petals Pre-School">
+  <!-- Hero band -->
+  <section class="bg-sky px-4 py-20 text-center text-white">
+    <h1 class="font-display text-5xl font-bold md:text-6xl [text-shadow:3px_3px_0_rgba(0,0,0,0.15)]">
+      Frequently Asked Questions
+    </h1>
+    <p class="mt-3 text-lg">Everything parents ask us before joining Pebbles &amp; Petals</p>
+  </section>
+
+  <main class="mx-auto max-w-3xl px-4 py-14">
+    <div class="space-y-5">
+      {faqs.map((f, i) => (
+        <details
+          class="group rounded-2xl border-3 border-ink bg-white px-6 py-5"
+          style={`box-shadow: 5px 5px 0 ${shadows[i % shadows.length]}`}
+        >
+          <summary class="flex cursor-pointer items-center justify-between font-display text-lg text-ink list-none gap-4">
+            {f.q}
+            <span class="shrink-0 text-coral text-2xl transition group-open:rotate-45">＋</span>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed">{f.a}</p>
+        </details>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="mb-4 font-display text-xl">Still have a question?</p>
+      <Button href={waLink("Hi! I have a question about admissions at Pebbles & Petals.")} color="bg-grass" class="text-white">
+        💬 Ask on WhatsApp
+      </Button>
+    </div>
+  </main>
+</Base>

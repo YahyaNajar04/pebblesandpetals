@@ -6,6 +6,7 @@ const links = [
 	{ href: "/programs", label: "Programs"},
 	{ href: "/facilities", label: "Facilties"},
 	{ href: "/fees", label: "Fees"},
+	{ href: "/faq", label: "FAQ"},
 	{ href: "/contact", label: "Contact Us"}
 ]
 const current = Astro.url.pathname;
@@ -14,7 +15,10 @@ const current = Astro.url.pathname;
 	<div class = "mx-auto flex items-center justify-between px-4 py-3">
 		<a href = "/" class = "flex items-center gap-2">
 		<img src = "/icon.jpeg" alt= "Pebbles & Petals Logo" class = "h-20 w-20"/>
+		<div class = "flex flex-col leading-tight">
 		<span class = "font-display text-2xl text-coral">Pebbles and Petals</span>
+		<span class = "font-display text-xl text-coral">Pre-School</span>
+		</div>
 		</a>
 
 		<nav class = "hidden gap-6 font-display text-lg md:flex">
