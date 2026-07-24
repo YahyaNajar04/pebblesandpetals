@@ -1,19 +1,26 @@
 ---
 import schedule from "../data/schedule.json";
+const circles = ["bg-sunny", "bg-grass", "bg-sky", "bg-coral"];
 ---
-<section class = "px-4 py-16">
-      <div class = "mx-auto max-w-6xl rounded-3xl border-3 border-ink bg-coral p-8 md:p-12">
-            <h2 class = "text-center font-display text-4xl font-bold text-white [text-shadow:2px_2px_0_rgba(0,0,0,0.15)]">
-                  A Day at Pebbles & Petals
-            </h2>
-            <div class = "mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-                  {schedule.map((s) => (
-                        <div class = "rounded-2xl border-3 border-ink bg-white p-4 text-center">
-                        <p class = "font-display text-xl text-coral">{s.time}</p>
-                        <p class = "text-2xl">{s.emoji}</p>
-                        <p class = "mt-1 text-sm">{s.label}</p>
-                        </div>
-                  ))}
+<section class="px-4 py-16">
+  <div class="mx-auto max-w-6xl rounded-3xl border-3 border-ink bg-coral p-8 md:p-12">
+    <h2 class="text-center font-display text-4xl font-bold text-white [text-shadow:2px_2px_0_rgba(0,0,0,0.15)]">
+      A Day at Pebbles & Petals
+    </h2>
+    <p class="mt-2 text-center font-display text-white/90">Mon–Sat · 9:30 AM – 1:30 PM</p>
+
+    <div class="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {schedule.map((s, i) => (
+        <a href="/resources" class="block transition hover:-translate-y-1">
+          <div class="h-full rounded-2xl border-3 border-ink bg-white p-5 text-center shadow-[5px_5px_0_rgba(0,0,0,0.25)]">
+            <div class={`mx-auto flex h-14 w-14 items-center justify-center rounded-full border-3 border-ink text-2xl ${circles[i % circles.length]}`}>
+              {s.emoji}
             </div>
-      </div>
+            <p class="mt-3 font-display text-xl text-coral">{s.time}</p>
+            <p class="mt-1 text-sm">{s.label}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
 </section>
