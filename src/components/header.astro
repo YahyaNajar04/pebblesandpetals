@@ -9,6 +9,7 @@ const links = [
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact Us" },
 ];
+const norm = (p: string) => (p !== "/" ? p.replace(/\/$/, "") : "/");
 const current = Astro.url.pathname;
 ---
 
@@ -28,7 +29,7 @@ const current = Astro.url.pathname;
         links.map((l) => (
           <a
             href={l.href}
-            class={current === l.href ? "text-coral" : "hover:text-sky"}
+            class={norm(l.href) === current ? "text-coral" : "hover:text-sky"}
           >
             {l.label}
           </a>
@@ -59,7 +60,7 @@ const current = Astro.url.pathname;
       links.map((l) => (
         <a
           href={l.href}
-          class={`rounded-xl px-3 py-2 ${current === l.href ? "bg-coral/10 text-coral" : "hover:bg-sky/10"}`}
+          class={norm(l.href) === current ? "text-coral" : "hover:text-sky"}
         >
           {l.label}
         </a>
