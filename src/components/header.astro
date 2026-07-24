@@ -10,7 +10,7 @@ const links = [
   { href: "/contact", label: "Contact Us" },
 ];
 const norm = (p: string) => (p !== "/" ? p.replace(/\/$/, "") : "/");
-const current = Astro.url.pathname;
+const current = norm(Astro.url.pathname);
 ---
 
 <header class="sticky top-0 z-50 border-b-4 border-sunny bg-white">
