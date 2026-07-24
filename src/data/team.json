@@ -1,12 +1,18 @@
 [
-  { "name": "Mrs. Zahida Kousar", "role": "Chairperson", "photo": "", "bio": "" },
-  { "name": "Gazi Hassan Butt", "role": "Director", "photo": "", "bio": "" },
+  {
+    "name": "Mrs. Zahida Kousar",
+    "role": "Chairperson",
+    "featured": true,
+    "photo": "",
+    "bio": "Mrs. Zahida Kousar is the visionary force behind Pebbles and Petals Pre-School, bringing a lifelong passion for early childhood education to Kishtwar. Her leadership is grounded in the belief that every child deserves a safe, joyful and stimulating start to their learning journey.\n\nWith years of dedication to community development and child welfare, she has championed the school's UK-based, play-based curriculum and its commitment to holistic development — shaping Pebbles and Petals into a trusted institution for families across the region."
+  },
+  { "name": "Mr. Gazi Hassan Butt", "role": "Director", "photo": "", "bio": "" },
   { "name": "Mr. Mohd Erfan Mattoo", "role": "Academic Advisor", "photo": "", "bio": "" },
   { "name": "Mrs. Shahnaz Banoo", "role": "Professional Development & Curriculum Advisor", "photo": "", "bio": "" },
   { "name": "Dr. Sanna Jaan", "role": "Counsellor on Call", "photo": "", "bio": "" },
-  { "name": "Saniya Fatima", "role": "Activity, Art & Craft Teacher", "photo": "", "bio": "" },
-  { "name": "Attiya Fatimah", "role": "Phonics Teacher", "photo": "", "bio": "" },
-  { "name": "", "role": "Legal Advisor", "photo": "", "bio": "" },
+  { "name": "Mrs. Saniya Fatima", "role": "Activity, Art & Craft Teacher", "photo": "", "bio": "" },
+  { "name": "Mrs. Attiya Fatimah", "role": "Phonics Teacher", "photo": "", "bio": "" },
+  { "name": "Mr. Mohd Iqbal Butt", "role": "Legal Advisor", "photo": "", "bio": "" },
   { "name": "", "role": "Admission Coordinator", "photo": "", "bio": "" },
   { "name": "", "role": "Front Desk Executive", "photo": "", "bio": "" },
   { "name": "", "role": "Childcare Assistant", "photo": "", "bio": "" }

@@ -1,6 +1,34 @@
 [
-  { "emoji": "🧸", "name": "Playgroup / Daycare", "fee": 2000, "blurb": "Sensory play, music & movement to ease in.", "shadow": "var(--color-sky)" },
-  { "emoji": "🎨", "name": "Nursery", "fee": 2100, "blurb": "Language, numeracy, creativity & social skills.", "shadow": "var(--color-coral)" },
-  { "emoji": "✏️", "name": "LKG", "fee": 2200, "blurb": "Early literacy, numeracy & communication.", "shadow": "var(--color-sunny)" },
-  { "emoji": "🎓", "name": "UKG", "fee": 2300, "blurb": "Independent learning & school-readiness.", "shadow": "var(--color-grass)" }
+  {
+    "emoji": "🧸",
+    "name": "Playgroup / Daycare",
+    "fee": 2000,
+    "blurb": "Sensory play, music & movement to ease in.",
+    "description": "A gentle introduction to the school environment through sensory play, music, movement, and social interaction.",
+    "shadow": "var(--color-sky)"
+  },
+  {
+    "emoji": "🎨",
+    "name": "Nursery",
+    "fee": 2100,
+    "blurb": "Language, numeracy, creativity & social skills.",
+    "description": "Building foundational skills in language, numeracy, creativity, and social development through engaging activities.",
+    "shadow": "var(--color-coral)"
+  },
+  {
+    "emoji": "✏️",
+    "name": "LKG",
+    "fee": 2200,
+    "blurb": "Early literacy, numeracy & communication.",
+    "description": "Developing early literacy, numeracy, communication, and independent learning skills.",
+    "shadow": "var(--color-sunny)"
+  },
+  {
+    "emoji": "🎓",
+    "name": "UKG",
+    "fee": 2300,
+    "blurb": "Independent learning & school-readiness.",
+    "description": "Preparing children for primary school with a balanced curriculum focused on academic readiness and holistic growth.",
+    "shadow": "var(--color-grass)"
+  }
 ]

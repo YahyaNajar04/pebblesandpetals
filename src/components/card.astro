@@ -1,9 +1,11 @@
 ---
-const { shadow = "var(--color-sunny)", class: extra = ""} = Astro.props;
+const { shadow = "var(--color-sunny)", href, class: extra = "" } = Astro.props;
+const Tag = href ? "a" : "div";
 ---
-<div
-      class = {`rounded-2xl border-3 border-ink bg-white p-6 text-center ${extra}`}
-      style = {`box-shadow: 6px 6px 0 ${shadow}`}
-      >
-      <slot />
-</div>
+<Tag
+  href={href}
+  class={`block rounded-2xl border-3 border-ink bg-white p-6 text-center ${href ? "transition hover:-translate-y-1 cursor-pointer" : ""} ${extra}`}
+  style={`box-shadow: 6px 6px 0 ${shadow}`}
+>
+  <slot />
+</Tag>

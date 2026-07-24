@@ -1,0 +1,10 @@
+[
+  { "title": "Safe & Hygienic Environment", "emoji": "🧼", "desc": "Regular sanitisation, child-safe furniture and materials.", "img": "Home_Image1.jpeg" },
+  { "title": "Spacious Classrooms", "emoji": "🏫", "desc": "Ventilated, well-lit rooms with dedicated learning and reading corners.", "img": "Home_Image1.jpeg" },
+  { "title": "Outdoor Play Area", "emoji": "🛝", "desc": "Swimming pool, sand pit, clay pit, swings, slides, go-karting track.", "img": "Home_Image1.jpeg" },
+  { "title": "Indoor Playroom", "emoji": "🧸", "desc": "Toys, puzzles, blocks, pretend-play sets and child-safe equipment.", "img": "Home_Image1.jpeg" },
+  { "title": "Montessori Learning Tools", "emoji": "🧩", "desc": "Hands-on materials for motor skills and concept development.", "img": "Home_Image1.jpeg" },
+  { "title": "Sensory Play Area", "emoji": "🌈", "desc": "Water play, textured surfaces, sensory bins.", "img": "Home_Image1.jpeg" },
+  { "title": "Parent Portal & Support", "emoji": "📱", "desc": "Updates, attendance, photos, progress tracking, and on-call counselling.", "img": "Home_Image1.jpeg" },
+  { "title": "Safety & Health", "emoji": "🛡️", "desc": "CCTV surveillance, secure ID entry, first-aid and trained staff.", "img": "Home_Image1.jpeg" }
+]

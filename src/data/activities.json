@@ -1,0 +1,26 @@
+[
+  { "title": "Math & Logic", "emoji": "🔢", "shadow": "var(--color-sky)", "items": [
+    { "name": "Counting Bears Sorting", "desc": "Sort by color or number into cups." },
+    { "name": "Shape Scavenger Hunt", "desc": "Find circles, squares, etc. in the room." },
+    { "name": "Number Hopscotch", "desc": "Jump to the right number on a taped floor grid." },
+    { "name": "Block Towers", "desc": "Count blocks while building towers." }
+  ]},
+  { "title": "Literacy & Language", "emoji": "📖", "shadow": "var(--color-coral)", "items": [
+    { "name": "Story Time with Props", "desc": "Use puppets or toys to act out stories." },
+    { "name": "Alphabet Treasure Hunt", "desc": "Hide letters around the room to find." },
+    { "name": "Name Recognition Game", "desc": "Match name cards with photos." },
+    { "name": "Rhyme Time", "desc": "Sing rhyming songs or make a rhyming wall chart." }
+  ]},
+  { "title": "Nature & Discovery", "emoji": "🌱", "shadow": "var(--color-grass)", "items": [
+    { "name": "Plant a Seed", "desc": "Watch it grow over days/weeks." },
+    { "name": "Bug Safari", "desc": "Look for insects in the garden." },
+    { "name": "Cloud Watching", "desc": "Lie on the ground and describe cloud shapes." },
+    { "name": "Recycle Sorting", "desc": "Teach environmental care by sorting trash." }
+  ]},
+  { "title": "Creative & Sensory", "emoji": "🎨", "shadow": "var(--color-sunny)", "items": [
+    { "name": "Finger Painting", "desc": "Explore colors and texture using hands." },
+    { "name": "Playdough Creations", "desc": "Strengthens fine motor skills." },
+    { "name": "Bubble Wrap Stomp Art", "desc": "Stomp on paint-covered bubble wrap to make art." },
+    { "name": "Sand & Water Table Play", "desc": "Scoop, pour, and explore textures." }
+  ]}
+]

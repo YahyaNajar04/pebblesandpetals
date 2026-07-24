@@ -1,0 +1,45 @@
+<!-- Overlay (hidden by default) -->
+<div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 p-4">
+  <img id="lightbox-img" src="" alt="" class="max-h-[90vh] max-w-[90vw] rounded-2xl border-3 border-white object-contain" />
+  <button id="lightbox-close" aria-label="Close" class="absolute right-6 top-6 text-4xl text-white">✕</button>
+</div>
+
+<script>
+  const box = document.getElementById("lightbox");
+  const boxImg = document.getElementById("lightbox-img") as HTMLImageElement | null;
+
+  if (box && boxImg) {
+    const open = (src: string, alt: string) => {
+      boxImg.src = src;
+      boxImg.alt = alt || "";
+      box.classList.remove("hidden");
+      box.classList.add("flex");
+      document.body.style.overflow = "hidden";   // lock scroll
+    };
+
+    document.addEventListener("click", (e) => {
+      const el = e.target as HTMLElement;
+
+      // 1) a zoomable image clicked directly (gallery, story, team...)
+      if (el instanceof HTMLImageElement && el.classList.contains("zoomable")) {
+        open(el.src, el.alt);
+        return;
+      }
+
+      // 2) any element (or its parent) carrying data-zoom-src (facilities...)
+      const trigger = el.closest("[data-zoom-src]");
+      if (trigger) {
+        open(trigger.getAttribute("data-zoom-src")!, trigger.getAttribute("data-zoom-alt") ?? "");
+      }
+    });
+
+    // close on overlay click, ✕, or Escape
+    const close = () => {
+      box.classList.add("hidden");
+      box.classList.remove("flex");
+      document.body.style.overflow = "";
+    };
+    box.addEventListener("click", (e) => { if (e.target !== boxImg) close(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+  }
+</script>

@@ -4,6 +4,7 @@ import Footer from "../components/footer.astro";
 import Analytics from '@vercel/analytics/astro'
 const { title = "Pebbles and Petals Pre-School" } = Astro.props;
 import "../styles/global.css";
+import Lightbox from "../components/lightbox.astro";
 ---
 <html lang="en">
       <head>
@@ -19,6 +20,7 @@ import "../styles/global.css";
             <slot /> <!-- Astro's version of {children} -->
             <Footer/>
             <Analytics />
+            <Lightbox/>
       </body>
 </html>
 
