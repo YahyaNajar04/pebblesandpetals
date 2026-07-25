@@ -11,7 +11,7 @@ const rings = ["bg-sunny", "bg-sky", "bg-coral", "bg-grass"];
       <div class="mt-8 grid items-center gap-8 rounded-2xl border-3 border-ink bg-white p-8 shadow-[6px_6px_0_var(--color-sunny)] md:grid-cols-[auto_1fr]">
         <div class="text-center">
           {chair.photo
-            ? <img src={`/team/${chair.photo}`} alt={chair.name} class="mx-auto h-48 w-48 rounded-full border-3 border-ink object-cover" />
+            ? <img src={`/team/${chair.photo}`} alt={chair.name}  class="mx-auto h-48 w-48 rounded-full border-3 border-ink object-cover object-[center_25%]" />
             : <div class="mx-auto flex h-48 w-48 items-center justify-center rounded-full border-3 border-dashed border-sky bg-sunny/20 text-5xl">👩‍🏫</div>}
           <h3 class="mt-4 font-display text-2xl">{chair.name}</h3>
           <p class="font-display text-coral">{chair.role}</p>
@@ -37,7 +37,7 @@ const rings = ["bg-sunny", "bg-sky", "bg-coral", "bg-grass"];
         style={`box-shadow: 5px 5px 0 var(--color-${["sunny","sky","coral","grass"][i % 4]})`}
       >
         {m.photo
-          ? <img src={`/team/${m.photo}`} alt={m.name} class="mx-auto h-24 w-24 rounded-full border-3 border-ink object-cover" />
+          ? <img src={`/team/${m.photo}`} alt={m.name} class="mx-auto h-24 w-24 rounded-full border-3 border-ink object-cover object-[center_25%]" />
           : <div class={`mx-auto flex h-24 w-24 items-center justify-center rounded-full border-3 border-ink text-4xl ${rings[i % 4]}/30`}>👩‍🏫</div>}
         <h3 class="mt-3 font-display text-lg">{m.name || "Joining soon"}</h3>
         <p class="font-display text-sm text-sky">{m.role}</p>
@@ -91,7 +91,7 @@ const rings = ["bg-sunny", "bg-sky", "bg-coral", "bg-grass"];
         // photo (or emoji fallback)
         const photo = card.getAttribute("data-photo");
         photoEl.innerHTML = photo
-          ? `<img src="/team/${photo}" alt="" class="mx-auto h-40 w-40 rounded-full border-3 border-ink object-cover" />`
+          ? `<img src="/team/${photo}" alt="" class="mx-auto h-40 w-40 rounded-full border-3 border-ink object-cover object-[center_25%]" />`
           : `<div class="mx-auto flex h-40 w-40 items-center justify-center rounded-full border-3 border-ink bg-sunny/30 text-5xl">👩‍🏫</div>`;
 
         // bio paragraphs
