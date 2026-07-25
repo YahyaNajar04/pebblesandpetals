@@ -30,7 +30,12 @@ const items = [
 </section>
 
 <style>
-  .why-scroller { scrollbar-width: none; -ms-overflow-style: none; }
+  .why-scroller {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overscroll-behavior-x: contain;      /* stop swipe triggering back-navigation */
+    -webkit-overflow-scrolling: touch;   /* smooth iOS momentum */
+  }
   .why-scroller::-webkit-scrollbar { display: none; }
 </style>
 
@@ -38,21 +43,22 @@ const items = [
   const el = document.getElementById("why-scroller");
   if (el) {
     let paused = false;
-    let resumeTimer: number | undefined;
-    let pos = 0;              // our own float position
-    const speed = 0.5;        // px per frame
+    let idleTimer: number | undefined;
+    let pos = 0;                 // our own float position
+    const speed = 0.5;           // px per frame
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const scheduleResume = () => {
-      clearTimeout(resumeTimer);
-      resumeTimer = window.setTimeout(() => {
-        pos = el.scrollLeft;   // sync to wherever the user left it
+      clearTimeout(idleTimer);
+      idleTimer = window.setTimeout(() => {
+        pos = el.scrollLeft;     // sync to wherever the user left it
         paused = false;
-      }, 0);
+      }, 1200);
     };
 
     // auto-scroll loop
     const tick = () => {
-      if (!paused) {
+      if (!paused && !reduce) {
         pos += speed;
         const half = el.scrollWidth / 2;
         if (pos >= half) pos -= half;   // seamless loop
@@ -62,23 +68,27 @@ const items = [
     };
     requestAnimationFrame(tick);
 
-    // pause on wheel / touch, resume after inactivity
+    // pause on wheel / touch, resume once scrolling settles
     el.addEventListener("wheel", () => { paused = true; scheduleResume(); }, { passive: true });
-    el.addEventListener("touchstart", () => { paused = true; }, { passive: true });
-    el.addEventListener("touchend", scheduleResume);
+    el.addEventListener("touchstart", () => { paused = true; clearTimeout(idleTimer); }, { passive: true });
+    el.addEventListener("touchend", scheduleResume, { passive: true });
 
-    // click-and-drag to scroll (desktop)
+    // click-and-drag — MOUSE ONLY (touch uses native scrolling)
     let isDown = false, startX = 0, startScroll = 0;
     el.addEventListener("pointerdown", (e) => {
+      if (e.pointerType !== "mouse") return;
       isDown = true; paused = true;
       startX = e.pageX; startScroll = el.scrollLeft;
       el.style.cursor = "grabbing";
       el.setPointerCapture(e.pointerId);
     });
     el.addEventListener("pointermove", (e) => {
-      if (isDown) el.scrollLeft = startScroll - (e.pageX - startX);
+      if (isDown && e.pointerType === "mouse") el.scrollLeft = startScroll - (e.pageX - startX);
     });
-    const endDrag = () => { isDown = false; el.style.cursor = "grab"; scheduleResume(); };
+    const endDrag = (e: PointerEvent) => {
+      if (e.pointerType !== "mouse") return;
+      isDown = false; el.style.cursor = "grab"; scheduleResume();
+    };
     el.addEventListener("pointerup", endDrag);
     el.addEventListener("pointercancel", endDrag);
   }

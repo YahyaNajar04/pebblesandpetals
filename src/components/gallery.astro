@@ -1,30 +1,138 @@
 ---
-import all from "../data/gallery.json";
+import fs from "node:fs";
+import path from "node:path";
 
-const { title = "Gallery",ids, tag, limit } = Astro.props;
+const { title = "Gallery", limit, folder = "gallery" } = Astro.props;
 
-let images = all;
-if (ids) images = images.filter((img) => ids.includes(img.id));
-if (tag) images = images.filter((img) => img.tags?.includes(tag));
-if (limit) images = images.slice(0, limit);
+const dir = path.join(process.cwd(), "public", folder);
+const exts = [".jpg", ".jpeg", ".png", ".webp", ".avif"];
+
+let files: string[] = [];
+if (fs.existsSync(dir)) {
+  files = fs.readdirSync(dir)
+    .filter((f: string) => exts.includes(path.extname(f).toLowerCase()))
+    .sort();
+}
+if (limit) files = files.slice(0, limit);
+
+const loop = files.length > 2;
+const slides = loop ? [...files, ...files, ...files] : files;
+
+const altFor = (f: string) =>
+  path.basename(f, path.extname(f)).replace(/^\d+[_-]/, "").replace(/[-_]/g, " ");
 ---
+{files.length > 0 && (
+  <section class="py-10">
+    <h2 class="text-center font-display text-4xl font-bold text-coral md:text-5xl">{title}</h2>
 
-<section class="mx-auto max-w-6xl px-4 py-20">
-    <h2
-    class="text-center font-display text-4xl font-bold text-coral md:text-5xl"
-  >
-    {title}
-  </h2>
-  <div class="mt-10 flex flex-wrap justify-center gap-6">
-    {
-      images.map((img) => (
-        <img
-          src={`/${img.src}`}
-          alt={img.alt}
-          loading="lazy"
-          class="zoomable cursor-pointer h-64 w-full max-w-sm object-cover sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] rounded-2xl border-3 border-ink shadow-[4px_4px_0_var(--color-sky)] transition hover:scale-[1.02]"
-        />
-      ))
-    }
-  </div>
-</section>
+    <div class="relative mt-10">
+      <div
+        id="gal-track"
+        data-loop={loop ? "1" : "0"}
+        data-count={files.length}
+        class="gal-track flex snap-x snap-mandatory items-center gap-6 overflow-x-auto px-[18%] py-20"
+      >
+        {slides.map((f) => (
+          <img
+            src={`/${folder}/${f}`}
+            alt={altFor(f)}
+            class="gal-slide zoomable h-[220px] w-[80%] shrink-0 cursor-pointer snap-center scale-[0.9] rounded-2xl border-3 border-ink object-cover opacity-45 shadow-[6px_6px_0_var(--color-sky)] transition-all duration-300 md:h-[400px]"
+          />
+        ))}
+      </div>
+
+      <button id="gal-prev" aria-label="Previous photo"
+        class="absolute left-3 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border-3 border-ink bg-white text-2xl shadow-[3px_3px_0_var(--color-ink)] transition hover:bg-sunny md:left-8">‹</button>
+      <button id="gal-next" aria-label="Next photo"
+        class="absolute right-3 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border-3 border-ink bg-white text-2xl shadow-[3px_3px_0_var(--color-ink)] transition hover:bg-sunny md:right-8">›</button>
+    </div>
+  </section>
+)}
+
+<style>
+  .gal-track {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overscroll-behavior-x: contain;
+  }
+  .gal-track::-webkit-scrollbar { display: none; }
+  .gal-slide.is-active { transform: scale(1.25); opacity: 1; }
+</style>
+
+<script>
+  const track = document.getElementById("gal-track");
+  const prev = document.getElementById("gal-prev");
+  const next = document.getElementById("gal-next");
+
+  if (track && prev && next) {
+    const slides = Array.from(track.querySelectorAll(".gal-slide")) as HTMLElement[];
+    const loop = track.dataset.loop === "1";
+    const N = Number(track.dataset.count || slides.length);
+    let idx = loop ? N : 0;           // start in the middle copy
+
+    const posFor = (i: number) => {
+      const s = slides[i];
+      return s.offsetLeft - (track.clientWidth - s.offsetWidth) / 2;
+    };
+
+    const jump = (i: number) => {            // instant, no animation
+      track.style.scrollBehavior = "auto";
+      track.scrollLeft = posFor(i);
+      track.offsetHeight;                    // force reflow
+      track.style.scrollBehavior = "smooth";
+    };
+
+    const glide = (i: number) => {
+      track.style.scrollBehavior = "smooth";
+      track.scrollTo({ left: posFor(i) });
+    };
+
+    const markCentre = () => {
+      const mid = track.scrollLeft + track.clientWidth / 2;
+      let best = 0, bestDist = Infinity;
+      slides.forEach((s, i) => {
+        const d = Math.abs(s.offsetLeft + s.offsetWidth / 2 - mid);
+        if (d < bestDist) { bestDist = d; best = i; }
+      });
+      slides.forEach((s, i) => s.classList.toggle("is-active", i === best));
+      return best;
+    };
+
+    const go = (delta: number) => {
+      if (loop) {
+        // re-centre into the middle copy BEFORE animating
+        if (idx + delta < N) { idx += N; jump(idx); }
+        else if (idx + delta >= 2 * N) { idx -= N; jump(idx); }
+      }
+      idx = Math.max(0, Math.min(slides.length - 1, idx + delta));
+      glide(idx);
+    };
+
+    prev.addEventListener("click", () => go(-1));
+    next.addEventListener("click", () => go(1));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") go(-1);
+      if (e.key === "ArrowRight") go(1);
+    });
+
+    // keep idx in sync when the user swipes manually
+    let ticking = false, settle: number | undefined;
+    track.addEventListener("scroll", () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => { markCentre(); ticking = false; });
+      }
+      clearTimeout(settle);
+      settle = window.setTimeout(() => {
+        idx = markCentre();
+        if (loop) {
+          if (idx < N) { idx += N; jump(idx); }
+          else if (idx >= 2 * N) { idx -= N; jump(idx); }
+        }
+      }, 150);
+    }, { passive: true });
+
+    // init
+    requestAnimationFrame(() => { jump(idx); markCentre(); });
+  }
+</script>

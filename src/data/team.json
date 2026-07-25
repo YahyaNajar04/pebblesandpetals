@@ -3,16 +3,41 @@
     "name": "Mrs. Zahida Kousar",
     "role": "Chairperson",
     "featured": true,
-    "photo": "",
-    "bio": "Mrs. Zahida Kousar is the visionary force behind Pebbles and Petals Pre-School, bringing a lifelong passion for early childhood education to Kishtwar. Her leadership is grounded in the belief that every child deserves a safe, joyful and stimulating start to their learning journey.\n\nWith years of dedication to community development and child welfare, she has championed the school's UK-based, play-based curriculum and its commitment to holistic development — shaping Pebbles and Petals into a trusted institution for families across the region."
+    "photo": "ZahidaKousar.png",
+    "bio": "With over 40 years of dedicated experience in education, she brings a lifetime of wisdom, compassion, and academic excellence to Pebbles & Petals Pre-School. Holding M.A. English, M.Ed., and B.Ed. qualifications, she retired as a Senior Lecturer English from DIET Kishtwar after an illustrious career devoted to nurturing young minds and mentoring future educators.\n\nOver the years, she has taught at Higher Secondary School Girls and Boys as well as at the college level, earning the admiration and respect of hundreds of students and colleagues alike. As the District Coordinator for B.Ed. students, she played a pivotal role in guiding aspiring teachers, strengthening educational standards, and promoting excellence in teacher training.\n\nAt Pebbles & Petals, she serves as Chairperson, helping shape the school's educational philosophy, curriculum, and teaching practices. Her belief that every child deserves a joyful, caring, and inspiring start to learning reflects the values at the heart of our preschool."
   },
-  { "name": "Mr. Gazi Hassan Butt", "role": "Director", "photo": "", "bio": "" },
-  { "name": "Mr. Mohd Erfan Mattoo", "role": "Academic Advisor", "photo": "", "bio": "" },
-  { "name": "Mrs. Shahnaz Banoo", "role": "Professional Development & Curriculum Advisor", "photo": "", "bio": "" },
-  { "name": "Dr. Sanna Jaan", "role": "Counsellor on Call", "photo": "", "bio": "" },
-  { "name": "Mrs. Saniya Fatima", "role": "Activity, Art & Craft Teacher", "photo": "", "bio": "" },
-  { "name": "Mrs. Attiya Fatimah", "role": "Phonics Teacher", "photo": "", "bio": "" },
-  { "name": "Mr. Mohd Iqbal Butt", "role": "Legal Advisor", "photo": "", "bio": "" },
+  {
+    "name": "Mr. Gazi Hassan Butt",
+    "role": "Founder & Director",
+    "photo": "GaziHassan.png",
+    "bio": "Gazi Hassan is the Founder and Director of Pebbles & Petals Pre-School, bringing together extensive academic, research, and leadership experience with a passion for creating meaningful early learning experiences for young children.\n\nHe holds an MPhil in International and Area Studies from the MMAJ Academy of International Studies, Jamia Millia Islamia University, New Delhi, and has over seven years of experience in research, academia, policy, and institutional development. Throughout his career, he has worked with leading think tanks, universities, and national and international policy platforms, developing expertise in leadership, curriculum development, strategic planning, and educational engagement.\n\nAs an educator, Gazi has taught at the university level, designed academic curricula, organized educational programmes, and collaborated with renowned scholars and professionals from around the world. His exposure to diverse educational systems and child-centred learning approaches has inspired his vision for Pebbles & Petals.\n\nCommitted to providing quality early childhood education in Kishtwar, Gazi believes that a child's earliest years lay the foundation for lifelong learning. Under his leadership, Pebbles & Petals aims to foster curiosity, confidence, creativity, and strong values while working closely with parents to ensure every child receives the best possible start in life."
+  },
+  {
+    "name": "Mr. Mohd Erfan Mattoo",
+    "role": "Academic Advisor",
+    "photo": "ErfanMattoo.jpeg",
+    "bio": "A distinguished educationist with over 35 years of teaching experience, Mr. Mattoo holds a Master of Arts (M.A.) and Bachelor of Arts (B.A.) and retired after a remarkable career as an English teacher. Widely regarded as a pioneer in English grammar instruction, he has inspired generations of students through his passion for language, communication, and academic excellence. He is also acclaimed as a language expert, having conducted teacher training programmes at both Zonal and District levels, contributing significantly to enhancing the quality of English language teaching.\n\nAs the Academic Advisor at Pebbles & Petals Pre-School, he provides valuable guidance in developing a strong educational foundation, supporting curriculum planning, mentoring educators, and promoting best practices in teaching and learning. His wealth of experience, nurturing approach, and unwavering commitment to academic excellence help ensure that every child begins their educational journey in a caring, stimulating, and enriching environment."
+  },
+  { "name": "Mrs. Shahnaz Banoo", "role": "Professional Development & Curriculum Advisor", "photo": "ShahnazBanoo.png", "bio": "" },
+  {
+    "name": "Dr. Sanna Jaan",
+    "role": "Counsellor on Call",
+    "photo": "SannaJaan.png",
+    "bio": "Dr. Sanna Jaan, Ph.D. (Psychology) is a compassionate and experienced psychologist with nearly five years of professional practice in child psychology, counselling, and psychosocial support. She earned her Master's in Psychology from Jamia Millia Islamia, New Delhi, and completed professional internships at reputed institutions in Delhi, gaining valuable experience across diverse psychological settings.\n\nCurrently serving as a Psycho-Social Counsellor in Kishtwar, Dr. Sanna has worked extensively with children and adolescents from different age groups. She is passionate about nurturing children's emotional well-being, building resilience, and supporting their overall development through evidence-based, child-friendly counselling.\n\nAs the Counsellor-on-Call for Pebbles & Petals Pre-School, she works closely with children, parents, and educators to create a safe, positive, and emotionally supportive learning environment where every child can thrive with confidence."
+  },
+  {
+    "name": "Mrs. Saniya Fatima",
+    "role": "Activity, Art & Craft Teacher",
+    "photo": "SaniyaFatima.jpeg",
+    "bio": "With a strong academic foundation, including an M.A. in English, B.Ed., a Diploma in Computer Applications, and an ITI Diploma in Health Sanitary Inspector, she brings a diverse range of knowledge and skills to the classroom. She also has professional experience as a Field Investigator in survey examinations, which has strengthened her communication, observation, and organisational abilities.\n\nAs the Activity, Art & Craft Teacher at Pebbles & Petals Pre-School, she is passionate about nurturing children's creativity, imagination, and self-expression through engaging hands-on activities, art, crafts, and interactive learning experiences. She believes every child learns best when they are encouraged to explore, create, and discover in a joyful and supportive environment. Her caring nature and enthusiasm help children develop confidence, fine motor skills, and a lifelong love for learning."
+  },
+  {
+    "name": "Mrs. Attiya Fatimah",
+    "role": "Phonics Teacher",
+    "photo": "AttiyaFatimah.png",
+    "bio": "Attiya Fatimah is a passionate educator with over five years of teaching experience, dedicated to nurturing young minds through engaging and child-centred learning. She holds an M.A. in English and a B.Ed., combining strong academic credentials with practical classroom expertise.\n\nThroughout her teaching career, Attiya has served at Kidzee Public School, Kishtwar, and Global Delhi Public School, Kishtwar, where she has taught students across primary and middle school levels. Alongside classroom teaching, she has contributed to school administration, the admissions process, and student mentoring, reflecting her commitment to holistic education.\n\nAt Pebbles & Petals Pre-School, Attiya strives to create a joyful, caring, and stimulating environment where every child feels safe, valued, and encouraged to explore, learn, and grow."
+  },
+  { "name": "Mr. Mohd Iqbal Butt", "role": "Legal Advisor", "photo": "IqbalButt.png", "bio": "Mohd Iqbal Butt is a distinguished legal professional with over 30 years of experience in corporate and commercial law, including more than 20 years with Dua Associates, one of India's leading law firms. He has extensive expertise in mergers and acquisitions, foreign direct investment, corporate compliance, and real estate transactions, advising businesses on complex legal and regulatory matters. \n\n In addition to his corporate practice, he provides trusted counsel on estate planning, wills, trusts, and succession planning for individuals. He also has significant experience advising non-profit and philanthropic organizations in India and abroad, offering strategic legal guidance across a wide range of governance and compliance matters." },
   { "name": "", "role": "Admission Coordinator", "photo": "", "bio": "" },
   { "name": "", "role": "Front Desk Executive", "photo": "", "bio": "" },
   { "name": "", "role": "Childcare Assistant", "photo": "", "bio": "" }

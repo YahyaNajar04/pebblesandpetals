@@ -6,9 +6,7 @@ import facilities from "../data/facilities.json";
   <div class="mx-auto flex max-w-5xl flex-wrap justify-center gap-10">
     {
       facilities.map((f) => (
-        <div
-          data-zoom-src={`/${f.img}`}
-          data-zoom-alt={f.label}
+        <a href = "/resources"
           class="flex w-32 cursor-pointer flex-col items-center gap-3 text-center transition hover:scale-105"
         >
           <div
@@ -17,7 +15,7 @@ import facilities from "../data/facilities.json";
             {f.emoji}
           </div>
           <span class="font-display">{f.label}</span>
-        </div>
+        </a>
       ))
     }
   </div>

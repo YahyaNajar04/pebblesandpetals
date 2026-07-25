@@ -2,6 +2,6 @@
   { "emoji": "🏊", "label": "Swimming Pool", "bg": "bg-sky", "img": "Home_Image1.jpeg" },
   { "emoji": "🏎️", "label": "Go-Karting", "bg": "bg-coral", "img": "Home_Image1.jpeg" },
   { "emoji": "🌈", "label": "Sensory Play", "bg": "bg-grass", "img": "Home_Image1.jpeg" },
-  { "emoji": "🧩", "label": "Montessori Tools", "bg": "bg-sunny", "img": "Home_Image1.jpeg" },
+  { "emoji": "🧩", "label": "Montessori Tools", "bg": "bg-sunny", "img": "LearningTools.jpeg" },
   { "emoji": "🎥", "label": "CCTV Secured", "bg": "bg-coral/60", "img": "Home_Image1.jpeg" }
 ]
